@@ -1,35 +1,39 @@
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
-import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import moe.tlaster.precompose.PreComposeApp
+import moe.tlaster.precompose.navigation.NavHost
+import moe.tlaster.precompose.navigation.rememberNavigator
+import ui.theme.ColorPalette
+import ui.theme.LocalColors
+import ui.theme.LocalMyMoneyPadding
+import ui.theme.MyNotesPadding
 
-import mynotes.composeapp.generated.resources.Res
-import mynotes.composeapp.generated.resources.compose_multiplatform
-
-@OptIn(ExperimentalResourceApi::class)
 @Composable
-@Preview
-fun App() {
-    MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
+fun App(
+    useDarkTheme: Boolean = isSystemInDarkTheme(),
+) {
+    PreComposeApp {
+        val colors = if (!useDarkTheme) {
+            ColorPalette.Light
+        } else {
+            ColorPalette.Dark
+        }
+
+        CompositionLocalProvider(
+            LocalColors provides colors,
+            LocalMyMoneyPadding provides MyNotesPadding(),
+        ) {
+            val navigator = rememberNavigator()
+            NavHost(navigator = navigator, initialRoute = "/home") {
+                scene(route = "/home") {
+                    Column(modifier = Modifier.fillMaxSize()) {
+                        Text("lkjlkjklasdf")
+                    }
                 }
             }
         }
