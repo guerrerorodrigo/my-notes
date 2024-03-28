@@ -15,7 +15,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import ui.navigation.MainDestination
-import ui.theme.MyNotesTheme
+import ui.theme.AppTheme
+import ui.theme.AppTheme
 
 @Composable
 internal fun MainBottomAppBar(
@@ -24,8 +25,8 @@ internal fun MainBottomAppBar(
 ) {
     BottomAppBar(
         modifier = modifier,
-        containerColor = MyNotesTheme.colors.surface,
-        contentColor = MyNotesTheme.colors.onSurface,
+        containerColor = AppTheme.colors.surface,
+        contentColor = AppTheme.colors.onSurface,
         actions = {
             IconButton(onClick = { navigateTo(MainDestination.ChecklistNote) }) {
                 Icon(

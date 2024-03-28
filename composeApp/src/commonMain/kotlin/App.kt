@@ -5,11 +5,12 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.rememberNavigator
 import ui.navigation.MainDestination
 import ui.screens.MainScreen
-import ui.theme.MyNotesTheme
+import ui.theme.AppTheme
+import ui.theme.AppTheme
 
 @Composable
 fun App() {
-    MyNotesTheme {
+    AppTheme {
         val navigator = rememberNavigator()
         NavHost(navigator = navigator, initialRoute = "/home") {
             scene(route = "/home") {

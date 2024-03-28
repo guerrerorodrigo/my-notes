@@ -6,13 +6,13 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import moe.tlaster.precompose.PreComposeApp
 
-object MyNotesTheme {
+object AppTheme {
     val colors: ColorPalette
         @Composable
         @ReadOnlyComposable
         get() = LocalColors.current
 
-    val padding: MyNotesPadding
+    val padding: LocalPaddings
         @Composable
         @ReadOnlyComposable
         get() = LocalMyNotesPadding.current
@@ -24,7 +24,7 @@ object MyNotesTheme {
 }
 
 @Composable
-fun MyNotesTheme(
+fun AppTheme(
     useDarkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
@@ -37,7 +37,7 @@ fun MyNotesTheme(
 
         CompositionLocalProvider(
             LocalColors provides colors,
-            LocalMyNotesPadding provides MyNotesPadding(),
+            LocalMyNotesPadding provides LocalPaddings(),
             LocalAppTypography provides typography(),
         ) {
             content()

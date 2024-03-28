@@ -1,7 +1,7 @@
 package ui.models
 
 internal interface Note {
-    data class Text(
+    data class PreviewText(
         val title: String,
         val content: String,
     ) : Note

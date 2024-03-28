@@ -4,7 +4,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-data class MyNotesPadding(
+data class LocalPaddings(
     val none: Dp = 0.dp,
     val xxs: Dp = 2.dp,
     val xs: Dp = 4.dp,
@@ -16,4 +16,4 @@ data class MyNotesPadding(
     val xl: Dp = 64.dp
 )
 
-val LocalMyNotesPadding = staticCompositionLocalOf { MyNotesPadding() }
+val LocalMyNotesPadding = staticCompositionLocalOf { LocalPaddings() }
