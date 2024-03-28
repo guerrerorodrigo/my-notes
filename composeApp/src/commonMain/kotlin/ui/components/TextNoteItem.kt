@@ -13,7 +13,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import ui.models.Note
 import ui.theme.AppTheme
-import ui.theme.AppTheme
 
 @Composable
 internal fun TextNoteItem(

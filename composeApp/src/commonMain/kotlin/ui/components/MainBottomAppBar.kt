@@ -16,7 +16,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import ui.navigation.MainDestination
 import ui.theme.AppTheme
-import ui.theme.AppTheme
 
 @Composable
 internal fun MainBottomAppBar(

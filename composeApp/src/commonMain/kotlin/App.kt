@@ -6,7 +6,6 @@ import moe.tlaster.precompose.navigation.rememberNavigator
 import ui.navigation.MainDestination
 import ui.screens.MainScreen
 import ui.theme.AppTheme
-import ui.theme.AppTheme
 
 @Composable
 fun App() {

@@ -5,6 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import moe.tlaster.precompose.PreComposeApp
+import ui.designsystem.theme.AppShapes
+import ui.designsystem.theme.LocalShapes
 
 object AppTheme {
     val colors: ColorPalette
@@ -12,15 +14,20 @@ object AppTheme {
         @ReadOnlyComposable
         get() = LocalColors.current
 
-    val padding: LocalPaddings
+    val padding: AppPaddings
         @Composable
         @ReadOnlyComposable
-        get() = LocalMyNotesPadding.current
+        get() = LocalPaddings.current
 
     val typography: AppTypography
         @Composable
         @ReadOnlyComposable
-        get() = LocalAppTypography.current
+        get() = LocalTypography.current
+
+    val shapes: AppShapes
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalShapes.current
 }
 
 @Composable
@@ -37,8 +44,9 @@ fun AppTheme(
 
         CompositionLocalProvider(
             LocalColors provides colors,
-            LocalMyNotesPadding provides LocalPaddings(),
-            LocalAppTypography provides typography(),
+            LocalPaddings provides AppPaddings(),
+            LocalTypography provides typography(),
+            LocalShapes provides AppShapes(),
         ) {
             content()
         }
