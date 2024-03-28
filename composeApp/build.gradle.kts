@@ -41,6 +41,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
 
             implementation(libs.moe.tlaster.precompose)
+            implementation(libs.org.jetbrains.compose.material3)
+            implementation(libs.org.jetbrains.compose.material3.icons.extended)
         }
     }
 }

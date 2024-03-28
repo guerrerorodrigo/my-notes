@@ -16,4 +16,4 @@ data class MyNotesPadding(
     val xl: Dp = 64.dp
 )
 
-val LocalMyMoneyPadding = staticCompositionLocalOf { MyNotesPadding() }
+val LocalMyNotesPadding = staticCompositionLocalOf { MyNotesPadding() }
