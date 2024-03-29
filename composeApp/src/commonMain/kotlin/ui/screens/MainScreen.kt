@@ -16,6 +16,7 @@ import ui.components.MainBottomAppBar
 import ui.designsystem.buttons.PrimaryButton
 import ui.designsystem.buttons.SecondaryButton
 import ui.designsystem.buttons.TertiaryButton
+import ui.designsystem.switches.Switch
 import ui.navigation.NavDestination
 import ui.theme.AppTheme
 
@@ -71,6 +72,11 @@ internal fun MainScreen(
                 onClick = {},
                 icon = Icons.Default.Add
             )
+
+            Switch(checked = true, enabled = true, onCheckedChanged = {})
+            Switch(checked = true, enabled = false, onCheckedChanged = {})
+            Switch(checked = false, enabled = true, onCheckedChanged = {})
+            Switch(checked = false, enabled = false , onCheckedChanged = {})
         }
     }
 }
