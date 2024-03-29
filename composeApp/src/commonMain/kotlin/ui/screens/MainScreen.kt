@@ -10,10 +10,14 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.outlined.Add
+import androidx.compose.material.icons.outlined.Bookmark
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import ui.components.MainBottomAppBar
+import ui.designsystem.buttons.FilledIconButton
+import ui.designsystem.buttons.IconButton
 import ui.designsystem.buttons.PrimaryButton
 import ui.designsystem.buttons.SecondaryButton
 import ui.designsystem.buttons.TertiaryButton
@@ -92,6 +96,12 @@ internal fun MainScreen(
                 text = "Switch text",
                 modifier = Modifier.fillMaxWidth(),
             )
+
+            IconButton(icon = Icons.Outlined.Add, enabled = true, onClick = {})
+            IconButton(icon = Icons.Outlined.Add, enabled = false, onClick = {})
+
+            FilledIconButton(icon = Icons.Outlined.Bookmark, enabled = true, onClick = {})
+            FilledIconButton(icon = Icons.Outlined.Bookmark, enabled = false, onClick = {})
         }
     }
 }
