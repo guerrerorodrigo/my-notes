@@ -16,6 +16,7 @@ junit = "4.13.2"
 kotlin = "1.9.23"
 moe-tlaster-precompose-version = "1.5.11"
 org-jetbrains-compose-material3-version = "1.6.1"
+org-jetbrains-kotlin-collections-immutable-version = "0.3.7"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -33,6 +34,7 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 moe-tlaster-precompose = { module = "moe.tlaster:precompose", version.ref = "moe-tlaster-precompose-version" }
 org-jetbrains-compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "org-jetbrains-compose-material3-version" }
 org-jetbrains-compose-material3-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "org-jetbrains-compose-material3-version" }
+org-jetbrains-kotlin-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "org-jetbrains-kotlin-collections-immutable-version" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

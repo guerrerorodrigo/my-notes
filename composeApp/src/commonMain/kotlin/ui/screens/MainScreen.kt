@@ -1,6 +1,7 @@
 package ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,13 +15,22 @@ import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Bookmark
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import ui.components.MainBottomAppBar
 import ui.designsystem.buttons.FilledIconButton
 import ui.designsystem.buttons.IconButton
 import ui.designsystem.buttons.PrimaryButton
 import ui.designsystem.buttons.SecondaryButton
 import ui.designsystem.buttons.TertiaryButton
+import ui.designsystem.radiobuttons.RadioButton
+import ui.designsystem.radiobuttons.RadioButtonGroup
+import ui.designsystem.radiobuttons.RadioButtonItem
 import ui.designsystem.switches.Switch
 import ui.designsystem.switches.ToggleSelection
 import ui.navigation.NavDestination
@@ -102,6 +112,24 @@ internal fun MainScreen(
 
             FilledIconButton(icon = Icons.Outlined.Bookmark, enabled = true, onClick = {})
             FilledIconButton(icon = Icons.Outlined.Bookmark, enabled = false, onClick = {})
+
+            RadioButton(selected = false, enabled = true, onClick = {})
+            RadioButton(selected = true, enabled = true, onClick = {})
+            RadioButton(selected = false, enabled = false, onClick = {})
+            RadioButton(selected = true, enabled = false, onClick = {})
+
+            RadioButtonItem(selected = true, enabled = true, text = "Text", onClick = {})
+
+            var selectedIndex by remember { mutableIntStateOf(0) }
+            RadioButtonGroup(
+                modifier = Modifier
+                    .background(color = AppTheme.colors.background)
+                    .border(width = 1.dp, color = AppTheme.colors.outline),
+                title = "Title",
+                options = persistentListOf("Text", "Text"),
+                selectedIndex = selectedIndex,
+                onOptionSelected = { selectedIndex = it },
+            )
         }
     }
 }

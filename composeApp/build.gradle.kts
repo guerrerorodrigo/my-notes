@@ -42,6 +42,7 @@ kotlin {
             implementation(libs.moe.tlaster.precompose)
             implementation(libs.org.jetbrains.compose.material3)
             implementation(libs.org.jetbrains.compose.material3.icons.extended)
+            implementation(libs.org.jetbrains.kotlin.collections.immutable)
         }
     }
 }
