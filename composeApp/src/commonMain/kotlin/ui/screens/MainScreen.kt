@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -17,6 +18,7 @@ import ui.designsystem.buttons.PrimaryButton
 import ui.designsystem.buttons.SecondaryButton
 import ui.designsystem.buttons.TertiaryButton
 import ui.designsystem.switches.Switch
+import ui.designsystem.switches.ToggleSelection
 import ui.navigation.NavDestination
 import ui.theme.AppTheme
 
@@ -76,7 +78,20 @@ internal fun MainScreen(
             Switch(checked = true, enabled = true, onCheckedChanged = {})
             Switch(checked = true, enabled = false, onCheckedChanged = {})
             Switch(checked = false, enabled = true, onCheckedChanged = {})
-            Switch(checked = false, enabled = false , onCheckedChanged = {})
+            Switch(checked = false, enabled = false, onCheckedChanged = {})
+
+            ToggleSelection(
+                selected = false,
+                onSelectedChanged = {},
+                text = "Switch text",
+                modifier = Modifier.fillMaxWidth(),
+            )
+            ToggleSelection(
+                selected = true,
+                onSelectedChanged = {},
+                text = "Switch text",
+                modifier = Modifier.fillMaxWidth(),
+            )
         }
     }
 }
