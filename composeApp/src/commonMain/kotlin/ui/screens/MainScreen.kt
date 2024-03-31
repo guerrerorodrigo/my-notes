@@ -28,6 +28,8 @@ import ui.designsystem.buttons.IconButton
 import ui.designsystem.buttons.PrimaryButton
 import ui.designsystem.buttons.SecondaryButton
 import ui.designsystem.buttons.TertiaryButton
+import ui.designsystem.checkbox.Checkbox
+import ui.designsystem.checkbox.CheckboxGroup
 import ui.designsystem.radiobuttons.RadioButton
 import ui.designsystem.radiobuttons.RadioButtonGroup
 import ui.designsystem.radiobuttons.RadioButtonItem
@@ -129,6 +131,17 @@ internal fun MainScreen(
                 options = persistentListOf("Text", "Text"),
                 selectedIndex = selectedIndex,
                 onOptionSelected = { selectedIndex = it },
+            )
+
+            Checkbox(checked = false, enabled = true, onCheckedChange = {})
+            Checkbox(checked = false, enabled = false, onCheckedChange = {})
+            Checkbox(checked = true, enabled = true, onCheckedChange = {})
+            Checkbox(checked = true, enabled = false, onCheckedChange = {})
+
+            CheckboxGroup(
+                options = persistentListOf("Text", "Text"),
+                onCheckedChange = { _, _ -> },
+                selectedIndexes = persistentListOf(0),
             )
         }
     }
